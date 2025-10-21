@@ -300,9 +300,6 @@ spec:
         zuulConfSha: "{{ zuul_conf_sha }}"
     spec:
       imagePullSecrets: {{ spec.imagePullSecrets }}
-      securityContext:
-        runAsUser: 10001
-        runAsGroup: 10001
       containers:
       - name: executor
         image: {{ spec.imagePrefix }}/zuul-executor:{{ spec.zuulImageVersion }}
