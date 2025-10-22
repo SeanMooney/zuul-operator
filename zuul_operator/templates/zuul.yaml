@@ -350,6 +350,7 @@ spec:
       - name: nodepool-private-key
         secret:
           secretName: {{ executor_ssh_secret }}
+          defaultMode: 0400
       {%- endif %}
       {%- for volume in spec.get('jobVolumes', []) %}
       - {{ volume.volume | zuul_to_json }}
